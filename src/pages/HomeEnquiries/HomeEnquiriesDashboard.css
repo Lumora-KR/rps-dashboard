@@ -1,0 +1,309 @@
+/* Dashboard Container */
+.dashboard-container {
+  padding: 1.5rem;
+  transition: all 0.3s ease;
+  display: flex !important;
+  flex-direction: column !important;
+}
+
+/* Theme Styles */
+.light-theme {
+  background-color: #f8f9fa;
+  color: #333;
+}
+
+.dark-theme {
+  background-color: #1a1a1a;
+  color: #f8f9fa;
+}
+
+.dark-theme .chart-heading {
+  color: #f8f9fa;
+}
+
+.light-theme .chart-heading {
+  color: #333;
+}
+
+.dark-theme .card {
+  background-color: #2a2a2a;
+  border-color: #444;
+}
+
+.dark-theme .table {
+  color: #f8f9fa;
+}
+
+.dark-theme .table thead th {
+  border-bottom-color: #444;
+}
+
+.dark-theme .table td,
+.dark-theme .table th {
+  border-top-color: #444;
+}
+
+.dark-theme .modal-content {
+  background-color: #2a2a2a;
+  border-color: #444;
+}
+
+.dark-theme .form-control,
+.dark-theme .form-select {
+  background-color: #333;
+  border-color: #444;
+  color: #f8f9fa;
+}
+
+.dark-theme .input-group-text {
+  background-color: #444;
+  border-color: #555;
+  color: #f8f9fa;
+}
+
+.dark-theme .nav-tabs {
+  border-bottom-color: #444;
+}
+
+.dark-theme .nav-tabs .nav-link {
+  color: #f8f9fa;
+}
+
+.dark-theme .nav-tabs .nav-link.active {
+  background-color: #2a2a2a;
+  border-color: #444 #444 #2a2a2a;
+  color: #f8f9fa;
+}
+
+/* Page Header */
+.page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.page-title {
+  font-size: 1.75rem;
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+}
+
+.page-subtitle {
+  color: #6c757d;
+  margin-bottom: 0;
+}
+
+.dark-theme .page-subtitle {
+  color: #adb5bd;
+}
+
+.header-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+/* Cards */
+.chart-card,
+.table-card {
+  border-radius: 0.5rem;
+  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+  margin-bottom: 1.5rem;
+  overflow: hidden;
+}
+
+.chart-card .card-header,
+.table-card .card-header {
+  background-color: transparent;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.125);
+  padding: 1rem;
+}
+
+.dark-theme .chart-card .card-header,
+.dark-theme .table-card .card-header {
+  border-bottom-color: #444;
+}
+
+.chart-card .card-body,
+.table-card .card-body {
+  padding: 1rem;
+}
+
+/* Tabs */
+.enquiry-nav-tabs {
+  margin-bottom: 1.5rem;
+}
+
+.enquiry-nav-tabs .nav-link {
+  display: flex;
+  align-items: center;
+  padding: 0.75rem 1rem;
+  border-radius: 0.25rem 0.25rem 0 0;
+  font-weight: 500;
+}
+
+/* Status Badges */
+.status-badge {
+  padding: 0.35em 0.65em;
+  font-size: 0.75em;
+  font-weight: 600;
+  border-radius: 0.25rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.status-pending {
+  background-color: #ffc107;
+  color: #212529;
+}
+
+.status-confirmed {
+  background-color: #28a745;
+  color: #fff;
+}
+
+.status-cancelled {
+  background-color: #dc3545;
+  color: #fff;
+}
+
+.status-completed {
+  background-color: #6c757d;
+  color: #fff;
+}
+
+/* Table */
+.enquiry-table {
+  margin-bottom: 0;
+}
+
+.enquiry-table th {
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.enquiry-table td {
+  vertical-align: middle;
+}
+
+/* Action Buttons */
+.action-buttons {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.action-btn {
+  padding: 0.25rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Reset any default spacing for the input group */
+.search-input {
+  min-width: 250px;
+  display: flex;
+  align-items: center;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid transparent;
+  box-shadow: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Style the search icon container with no extra margin */
+.search-input .search-icon {
+  margin: 0;
+  padding: 0.5rem 0.75rem; /* Adjust padding as needed */
+  background-color: var(--bs-light);
+  color: var(--bs-secondary);
+  border: none;
+  border-right: 1px solid #ccc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Style the input field and remove extra padding/margin */
+.search-input .search-field {
+  border: none;
+  padding: 0.5rem;
+  background-color: var(--bs-light);
+  color: var(--bs-dark);
+  outline: none;
+  font-size: 14px;
+  flex: 1;
+  margin: 0;
+}
+
+/* Placeholder styling */
+.search-input .search-field::placeholder {
+  color: #999;
+  opacity: 0.8;
+}
+
+/* Dark mode override (if applicable) */
+.search-input.dark-mode .search-icon,
+.search-input.dark-mode .search-field {
+  background-color: #333;
+  color: #fff;
+}
+
+.search-input.dark-mode .search-field::placeholder {
+  color: #aaa;
+}
+
+.status-filter {
+  min-width: 150px;
+}
+
+.export-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Pagination */
+.pagination-custom {
+  margin-bottom: 0;
+}
+
+/* Refresh Button Animation */
+.refresh-btn .spin {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Alert */
+.custom-alert {
+  margin-bottom: 1.5rem;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .page-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .header-actions {
+    width: 100%;
+    justify-content: flex-end;
+  }
+
+  .enquiry-nav-tabs .nav-link {
+    padding: 0.5rem 0.75rem;
+    font-size: 0.9rem;
+  }
+}

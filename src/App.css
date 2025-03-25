@@ -1,0 +1,113 @@
+/* App.css */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+
+:root {
+  --primary-color: #4361ee;
+  --primary-light: #637efc;
+  --primary-dark: #3a56d4;
+  --secondary-color: #ff9800;
+  --success-color: #2ec4b6;
+  --danger-color: #e63946;
+  --warning-color: #ff9f1c;
+  --info-color: #4cc9f0;
+  --dark-color: #212529;
+  --light-color: #f8f9fa;
+  --gray-color: #6c757d;
+  --gray-light: #e9ecef;
+  --gray-dark: #343a40;
+  --white-color: #ffffff;
+
+  --border-radius: 8px;
+  --box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  --transition: all 0.3s ease;
+
+  --font-family: "Poppins", sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-family);
+  background-color: #f5f7fb;
+  color: var(--dark-color);
+  line-height: 1.6;
+}
+
+.loading-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100%;
+  font-size: 1.5rem;
+  color: var(--primary-color);
+}
+
+/* Utility Classes */
+.text-primary {
+  color: var(--primary-color) !important;
+}
+.text-secondary {
+  color: var(--secondary-color) !important;
+}
+.text-success {
+  color: var(--success-color) !important;
+}
+.text-danger {
+  color: var(--danger-color) !important;
+}
+.text-warning {
+  color: var(--warning-color) !important;
+}
+.text-info {
+  color: var(--info-color) !important;
+}
+
+.bg-primary {
+  background-color: var(--primary-color) !important;
+}
+.bg-secondary {
+  background-color: var(--secondary-color) !important;
+}
+.bg-success {
+  background-color: var(--success-color) !important;
+}
+.bg-danger {
+  background-color: var(--danger-color) !important;
+}
+.bg-warning {
+  background-color: var(--warning-color) !important;
+}
+.bg-info {
+  background-color: var(--info-color) !important;
+}
+.bg-light {
+  background-color: var(--light-color) !important;
+}
+.bg-dark {
+  background-color: var(--dark-color) !important;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--gray-light);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--gray-color);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary-color);
+}

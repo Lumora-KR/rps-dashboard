@@ -1,0 +1,108 @@
+/* client/src/pages/Dashboard/Dashboard.css */
+.dashboard-overview {
+  width: 100%;
+}
+
+.page-title {
+  margin-bottom: 24px !important;
+  font-weight: 600 !important;
+}
+
+.stats-container {
+  margin-bottom: 24px;
+}
+
+.stat-card {
+  height: 100%;
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.stat-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1) !important;
+}
+
+.stat-content {
+  display: flex;
+  align-items: center;
+}
+
+.stat-icon-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  border-radius: 12px;
+  margin-right: 16px;
+}
+
+.stat-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.stat-value {
+  font-weight: 700 !important;
+  font-size: 2rem !important;
+  line-height: 1.2 !important;
+}
+
+.stat-title {
+  color: #666;
+  font-size: 0.875rem !important;
+}
+
+.chart-container {
+  height: 400px;
+  margin-bottom: 24px;
+}
+
+.loading-container,
+.error-container,
+.no-chart-data {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 300px;
+  width: 100%;
+}
+.message-box {
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+.message-box::-webkit-scrollbar {
+  width: 6px;
+}
+
+.message-box::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+.message-box::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 10px;
+}
+
+.message-box::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+@media (max-width: 600px) {
+  .page-title {
+    font-size: 1.5rem !important;
+    margin-bottom: 16px !important;
+  }
+
+  .stat-icon-container {
+    width: 50px;
+    height: 50px;
+  }
+
+  .stat-value {
+    font-size: 1.5rem !important;
+  }
+}

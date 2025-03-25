@@ -1,0 +1,619 @@
+:root {
+  --primary-color-car-hotel: #4361ee;
+  --secondary-color-car-hotel: #ff9800;
+  --success-color-car-hotel: #2ec4b6;
+  --danger-color-car-hotel: #e63946;
+  --light-bg-car-hotel: #ffffff;
+  --light-text-car-hotel: #333333;
+  --light-border-car-hotel: #e0e0e0;
+  --light-input-bg-car-hotel: #f8f9fa;
+  --dark-bg-car-hotel: #1a1a1a;
+  --dark-secondary-bg-car-hotel: #2a2a2a;
+  --dark-text-car-hotel: #f8f9fa;
+  --dark-border-car-hotel: #444444;
+  --dark-input-bg-car-hotel: #333333;
+}
+
+/* Theme Styles */
+.light-theme {
+  --bg-color: var(--light-bg-car-hotel);
+  --text-color: var(--light-text-car-hotel);
+  --border-color: var(--light-border-car-hotel);
+  --input-bg: var(--light-input-bg-car-hotel);
+  --card-bg: var(--light-bg-car-hotel);
+  --shadow: var(--box-shadow-car-hotel);
+}
+
+.dark-theme {
+  --bg-color: var(--dark-bg-car-hotel);
+  --text-color: var(--dark-text-car-hotel);
+  --border-color: var(--dark-border-car-hotel);
+  --input-bg: var(--dark-input-bg-car-hotel);
+  --card-bg: var(--dark-secondary-bg-car-hotel);
+  --shadow: var(--dark-box-shadow-car-hotel);
+}
+
+/* Global Styles */
+.add-car-rental-page {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: var(--transition);
+  min-height: 100vh;
+  padding-bottom: 3rem;
+  position: relative;
+  border-radius: 20px;
+}
+
+/* Theme Toggle */
+.theme-toggle-container {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  z-index: 10;
+}
+
+.theme-toggle-button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background-color: var(--primary-color-car-hotel) !important;
+  color: #ffffff;
+  border: none;
+  border-radius: var(--border-radius);
+  padding: 8px 16px;
+  cursor: pointer;
+  transition: var(--transition);
+  box-shadow: var(--shadow);
+  pointer-events: fill;
+  outline: none;
+}
+
+.theme-toggle-button:hover {
+  background-color: var(--primary-color-car-hotel) !important;
+  color: white;
+}
+
+/* Hero Banner */
+.page-hero-banner {
+  position: relative;
+  height: 250px;
+  background-image: url("/placeholder.svg?height=250&width=1200");
+  background-size: cover;
+  background-position: center;
+  margin-bottom: 2rem;
+  color: white;
+}
+
+.page-hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /* background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)); */
+}
+
+.page-hero-content {
+  position: relative;
+  padding-top: 100px;
+  z-index: 1;
+}
+
+.breadcrumb {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 1rem;
+  font-size: 0.875rem;
+}
+
+.breadcrumb .separator {
+  margin: 0 0.5rem;
+}
+
+.breadcrumb .active {
+  font-weight: 600;
+}
+
+.page-hero-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin: 0;
+}
+
+/* Form Card */
+.add-car-rental-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.add-car-rental-form-card {
+  background-color: var(--card-bg-car-hotel) !important;
+  color: var(--text-color) !important;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+  padding: 2rem;
+  margin-bottom: 2rem;
+  transition: var(--transition);
+  border: 1px solid var(--border-color);
+}
+
+.form-title {
+  color: var(--text-color) !important;
+  margin-bottom: 0.5rem !important;
+  font-weight: 600 !important;
+}
+
+.section-title {
+  color: var(--text-color) !important;
+  font-weight: 600 !important;
+  margin-bottom: 1rem !important;
+}
+
+/* Custom Input Styling */
+.custom-input {
+  margin-bottom: 1rem;
+}
+
+.custom-input input,
+.custom-input textarea,
+.custom-input .MuiSelect-select {
+  background-color: var(--input-bg) !important;
+  color: var(--text-color) !important;
+  border-radius: var(--border-radius) !important;
+  border: 1px solid var(--border-color) !important;
+  padding: 12px !important;
+  transition: var(--transition) !important;
+}
+
+.custom-input input:focus,
+.custom-input textarea:focus,
+.custom-input .MuiSelect-select:focus {
+  border-color: var(--primary-color-car-hotel) !important;
+  box-shadow: 0 0 0 2px rgba(67, 97, 238, 0.2) !important;
+}
+
+.custom-input input:-webkit-autofill,
+.custom-input input:-webkit-autofill:hover,
+.custom-input input:-webkit-autofill:focus,
+.custom-input input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 30px var(--input-bg) inset !important;
+  -webkit-text-fill-color: var(--text-color) !important;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+.custom-input label {
+  color: var(--text-color) !important;
+  opacity: 0.8;
+}
+
+.custom-input .MuiInputLabel-shrink {
+  color: var(--primary-color-car-hotel) !important;
+}
+
+/* Custom Checkbox */
+.custom-checkbox {
+  color: var(--primary-color-car-hotel) !important;
+}
+
+.dollar-symbol {
+  color: #000000;
+}
+.dark-theme .dollar-symbol {
+  color: #ffffff;
+}
+/* Upload Button */
+.upload-button {
+  background-color: var(--input-bg) !important;
+  color: var(--text-color) !important;
+  border: 1px dashed var(--border-color) !important;
+  padding: 10px 20px !important;
+  margin-bottom: 1rem !important;
+  transition: var(--transition) !important;
+}
+
+.upload-button:hover {
+  background-color: rgba(67, 97, 238, 0.1) !important;
+  border-color: var(--primary-color-car-hotel) !important;
+}
+
+/* Image Preview */
+.image-preview-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.image-preview-item {
+  position: relative;
+  width: 120px;
+  height: 120px;
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  border: 1px solid var(--border-color);
+}
+
+.image-preview-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.remove-image-btn {
+  position: absolute !important;
+  top: 5px !important;
+  right: 5px !important;
+  background-color: rgba(255, 255, 255, 0.8) !important;
+  color: var(--danger-color) !important;
+  padding: 4px !important;
+  min-width: auto !important;
+  width: 24px !important;
+  height: 24px !important;
+}
+
+.edit-image-note {
+  margin-top: 1rem !important;
+  color: var(--text-color) !important;
+  opacity: 0.7;
+}
+
+/* Form Actions */
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.submit-button {
+  background-color: var(--primary-color-car-hotel) !important;
+  color: white !important;
+  padding: 10px 24px !important;
+  border-radius: var(--border-radius) !important;
+  transition: var(--transition) !important;
+}
+
+.submit-button:hover {
+  background-color: #3651d4 !important;
+  box-shadow: 0 4px 8px rgba(67, 97, 238, 0.3) !important;
+}
+
+.cancel-button {
+  border-color: var(--danger-color) !important;
+  color: var(--danger-color) !important;
+  height: 50px !important;
+  margin-top: 20px !important;
+}
+
+/* Car Rentals Table */
+.car-rentals-table-card {
+  background-color: var(--card-bg) !important;
+  color: var(--text-color) !important;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+  margin-top: 3rem;
+  margin-bottom: 2rem;
+  transition: var(--transition);
+  border: 1px solid var(--border-color);
+  overflow: hidden;
+}
+
+/* Modern Card Header */
+.modern-card-header {
+  padding: 1.5rem;
+  border-bottom: 1px solid var(--border-color);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.modern-header-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: 0;
+  color: var(--text-color);
+}
+
+.modern-filters-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  align-items: center;
+}
+
+.modern-search-wrapper {
+  position: relative;
+  flex: 1;
+  min-width: 200px;
+}
+
+.modern-search-icon {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--text-color);
+  opacity: 0.5;
+}
+
+.modern-search-input {
+  width: 100%;
+  padding: 10px 10px 10px 40px;
+  border-radius: var(--border-radius);
+  border: 1px solid var(--border-color);
+  background-color: var(--input-bg);
+  color: var(--text-color);
+  transition: var(--transition);
+}
+
+.modern-search-input:focus {
+  outline: none;
+  border-color: var(--primary-color-car-hotel);
+  box-shadow: 0 0 0 2px rgba(67, 97, 238, 0.2);
+}
+
+.modern-filter-wrapper {
+  position: relative;
+  min-width: 150px;
+}
+
+.modern-select {
+  width: 100%;
+  padding: 10px 30px 10px 10px;
+  border-radius: var(--border-radius);
+  border: 1px solid var(--border-color);
+  background-color: var(--input-bg);
+  color: var(--text-color);
+  appearance: none;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.modern-select:focus {
+  outline: none;
+  border-color: var(--primary-color-car-hotel);
+}
+
+.modern-select-icon {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--text-color);
+  pointer-events: none;
+}
+
+/* .modern-date-group {
+  display: flex;
+  flex-direction: column;
+  min-width: 150px;
+}
+
+.modern-date-label {
+  font-size: 0.75rem;
+  margin-bottom: 4px;
+  color: var(--text-color);
+  opacity: 0.7;
+}
+
+.modern-date-input-wrapper {
+  position: relative;
+}
+
+.modern-date-input {
+  width: 100%;
+  padding: 10px;
+  border-radius: var(--border-radius);
+  border: 1px solid var(--border-color);
+  background-color: var(--input-bg);
+  color: var(--text-color);
+  transition: var(--transition);
+}
+
+.modern-date-input::-webkit-calendar-picker-indicator {
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  cursor: pointer;
+}
+
+.modern-calendar-icon {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--text-color);
+  opacity: 0.5;
+  pointer-events: none;
+} */
+
+.add-hotel-car-cancel-btn {
+  padding: 10px 20px !important;
+  background-color: #2ec4b6 !important;
+}
+/* .modern-apply-btn {
+  padding: 10px 20px;
+  border-radius: var(--border-radius);
+  border: none;
+  background-color: var(--primary-color-car-hotel);
+  color: white;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.modern-apply-btn:hover {
+  background-color: #3651d4;
+} */
+
+.modern-export-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  border-radius: var(--border-radius);
+  border: 1px solid var(--border-color);
+  background-color: var(--input-bg);
+  color: var(--text-color);
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.modern-export-btn:hover {
+  background-color: rgba(67, 97, 238, 0.1);
+  border-color: var(--primary-color-car-hotel);
+}
+
+/* Table Styles */
+.table-responsive {
+  overflow-x: auto;
+  padding: 1rem;
+}
+
+.modern-table {
+  width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+.modern-table th,
+.modern-table td {
+  padding: 1rem;
+  text-align: left;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.modern-table th {
+  font-weight: 600;
+  color: var(--text-color);
+  background-color: rgba(0, 0, 0, 0.03);
+}
+
+.dark-theme .modern-table th {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+.modern-table tr:hover {
+  background-color: rgba(0, 0, 0, 0.02);
+}
+
+.dark-theme .modern-table tr:hover {
+  background-color: rgba(255, 255, 255, 0.03);
+}
+
+.table-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.edit-button {
+  color: var(--primary-color-car-hotel) !important;
+}
+
+.delete-button {
+  color: var(--danger-color) !important;
+}
+
+/* Loading and No Data */
+.loading-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem;
+  gap: 1rem;
+}
+
+.no-data-message {
+  text-align: center;
+  padding: 3rem;
+  color: var(--text-color);
+  opacity: 0.7;
+}
+
+/* Pagination */
+.pagination-container {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.pagination-button,
+.pagination-number {
+  padding: 8px 16px;
+  border-radius: var(--border-radius);
+  border: 1px solid var(--border-color);
+  background-color: var(--input-bg);
+  color: var(--text-color);
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.pagination-button:hover:not(.disabled),
+.pagination-number:hover:not(.active) {
+  background-color: rgba(67, 97, 238, 0.1);
+  border-color: var(--primary-color-car-hotel);
+}
+
+.pagination-number.active {
+  background-color: var(--primary-color-car-hotel);
+  color: white;
+  border-color: var(--primary-color-car-hotel);
+}
+
+.pagination-button.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Delete Dialog */
+.delete-dialog {
+  color: var(--text-color);
+}
+
+.delete-dialog.dark-theme .MuiPaper-root {
+  background-color: var(--dark-secondary-bg);
+  color: var(--dark-text);
+}
+
+.delete-dialog.dark-theme .MuiDialogContentText-root {
+  color: var(--dark-text);
+  opacity: 0.8;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .page-hero-title {
+    font-size: 1.75rem;
+  }
+
+  .modern-card-header {
+    padding: 1rem;
+  }
+
+  .modern-filters-container {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .modern-search-wrapper,
+  .modern-filter-wrapper,
+  .modern-date-group,
+  .modern-apply-btn,
+  .modern-export-btn {
+    width: 100%;
+  }
+
+  .form-actions {
+    flex-direction: column;
+  }
+
+  .submit-button,
+  .cancel-button {
+    width: 100%;
+  }
+}

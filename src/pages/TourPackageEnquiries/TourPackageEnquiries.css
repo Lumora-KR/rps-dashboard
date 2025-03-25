@@ -1,0 +1,50 @@
+/* .tour-package-enquiries {
+  padding-bottom: 20px;
+}
+
+.page-header {
+  margin-bottom: 30px;
+}
+
+.page-title {
+  font-weight: 700;
+  margin-bottom: 5px;
+  color: #333;
+}
+
+.page-subtitle {
+  color: #6c757d;
+  margin: 0;
+}
+
+.loading-container,
+.error-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 400px;
+}
+
+.loading-container p {
+  margin-top: 15px;
+  color: #6c757d;
+}
+
+.chart-card {
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  padding: 20px;
+  height: 100%;
+  transition: all 0.3s ease;
+}
+
+.chart-card:hover {
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.chart-container {
+  height: 300px;
+  position: relative;
+} */
