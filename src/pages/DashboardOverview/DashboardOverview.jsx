@@ -74,6 +74,9 @@ const DashboardOverview = () => {
   const fetchDashboardData = async () => {
     try {
       setLoading(true);
+      setError(null);
+
+      // console.log("Fetching dashboard data...");
 
       // Fetch all data in parallel
       const [statsData, chartData, activityData, quickStatsData] =
@@ -84,14 +87,39 @@ const DashboardOverview = () => {
           apiService.getQuickStats(),
         ]);
 
-      setStats(statsData);
-      setChartData(chartData);
-      setRecentActivity(activityData);
-      setQuickStats(quickStatsData);
+      // console.log("Stats data:", statsData);
+      // console.log("Chart data:", chartData);
+      // console.log("Activity data:", activityData);
+      // console.log("Quick stats data:", quickStatsData);
+
+      // Check if data is valid before setting state
+      if (statsData) {
+        setStats(statsData);
+      } else {
+        // console.error("Invalid stats data received");
+      }
+
+      if (chartData) {
+        setChartData(chartData);
+      } else {
+        // console.error("Invalid chart data received");
+      }
+
+      if (Array.isArray(activityData)) {
+        setRecentActivity(activityData);
+      } else {
+        // console.error("Invalid activity data received");
+      }
+
+      if (quickStatsData) {
+        setQuickStats(quickStatsData);
+      } else {
+        // console.error("Invalid quick stats data received");
+      }
 
       setLoading(false);
     } catch (error) {
-      console.error("Error fetching dashboard data:", error);
+      // console.error("Error fetching dashboard data:", error);
       setError("Failed to load dashboard data. Please try again later.");
       setLoading(false);
     }
@@ -105,7 +133,74 @@ const DashboardOverview = () => {
 
   // Prepare data for the overview chart
   const prepareOverviewData = () => {
-    if (!chartData) return null;
+    if (
+      !chartData ||
+      !chartData.tourPackageDetails ||
+      !chartData.carRentalDetails ||
+      !chartData.hotelEnquiries ||
+      !chartData.contactForms
+    ) {
+      // console.error("Chart data is missing or incomplete:", chartData);
+
+      // Return a default structure to prevent rendering errors
+      return {
+        labels: ["No data available"],
+        datasets: [
+          {
+            label: "Tour Package Enquiries",
+            data: [0],
+            borderColor: "#ff9800",
+            backgroundColor: "rgba(255, 152, 0, 0.1)",
+            tension: 0.4,
+            fill: true,
+            pointBackgroundColor: "#ff9800",
+            pointBorderColor: "#fff",
+            pointBorderWidth: 2,
+            pointRadius: 4,
+            pointHoverRadius: 6,
+          },
+          {
+            label: "Car Rental Enquiries",
+            data: [0],
+            borderColor: "#2ec4b6",
+            backgroundColor: "rgba(46, 196, 182, 0.1)",
+            tension: 0.4,
+            fill: true,
+            pointBackgroundColor: "#2ec4b6",
+            pointBorderColor: "#fff",
+            pointBorderWidth: 2,
+            pointRadius: 4,
+            pointHoverRadius: 6,
+          },
+          {
+            label: "Hotel Enquiries",
+            data: [0],
+            borderColor: "#4361ee",
+            backgroundColor: "rgba(67, 97, 238, 0.1)",
+            tension: 0.4,
+            fill: true,
+            pointBackgroundColor: "#4361ee",
+            pointBorderColor: "#fff",
+            pointBorderWidth: 2,
+            pointRadius: 4,
+            pointHoverRadius: 6,
+          },
+          {
+            label: "Contact Form Submissions",
+            data: [0],
+            borderColor: "#e63946",
+            backgroundColor: "rgba(230, 57, 70, 0.1)",
+            tension: 0.4,
+            fill: true,
+            pointBackgroundColor: "#e63946",
+            pointBorderColor: "#fff",
+            pointBorderWidth: 2,
+            pointRadius: 4,
+            pointHoverRadius: 6,
+          },
+        ],
+      };
+    }
 
     return {
       labels: chartData.tourPackageDetails.labels,
@@ -285,7 +380,7 @@ const DashboardOverview = () => {
             aria-label="Refresh dashboard data"
           >
             <RefreshIcon className={refreshing ? "spin" : ""} />
-            <span className="btn-text btn-text-refresh">Refresh</span>
+            <span className="btn-text">Refresh</span>
           </button>
         </div>
       </div>
@@ -354,16 +449,18 @@ const DashboardOverview = () => {
           <div className="chart-body">
             <ResponsiveContainer width="100%" height={300}>
               <LineChart
-                data={prepareOverviewData()?.labels.map((label, index) => {
-                  const datasets = prepareOverviewData()?.datasets;
-                  return {
-                    name: label,
-                    tourPackages: datasets[0].data[index],
-                    carRentals: datasets[1].data[index],
-                    hotels: datasets[2].data[index],
-                    contacts: datasets[3].data[index],
-                  };
-                })}
+                data={(prepareOverviewData()?.labels || []).map(
+                  (label, index) => {
+                    const datasets = prepareOverviewData()?.datasets || [];
+                    return {
+                      name: label,
+                      tourPackages: datasets[0]?.data[index] || 0,
+                      carRentals: datasets[1]?.data[index] || 0,
+                      hotels: datasets[2]?.data[index] || 0,
+                      contacts: datasets[3]?.data[index] || 0,
+                    };
+                  }
+                )}
               >
                 <CartesianGrid
                   strokeDasharray="3 3"
