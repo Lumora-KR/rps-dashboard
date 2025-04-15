@@ -112,7 +112,7 @@ const AddCarRental = () => {
   const fetchCarRentals = async () => {
     try {
       setLoading(true);
-      const response = await axios.get("http://localhost:5000/api/car-rentals");
+      const response = await axios.get("/api/car-rentals");
       if (response.data.success) {
         setCarRentals(response.data.data);
       }
@@ -286,7 +286,7 @@ const AddCarRental = () => {
         }
 
         response = await axios.put(
-          `http://localhost:5000/api/car-rentals/${currentId}`,
+          `/api/car-rentals/${currentId}`,
           formDataToSend,
           {
             headers: {
@@ -296,7 +296,7 @@ const AddCarRental = () => {
         );
       } else {
         response = await axios.post(
-          "http://localhost:5000/api/car-rentals",
+          "/api/car-rentals",
           formDataToSend,
           {
             headers: {
@@ -390,7 +390,7 @@ const AddCarRental = () => {
     try {
       setLoading(true);
       const response = await axios.delete(
-        `http://localhost:5000/api/car-rentals/${carToDelete.id}`
+        `/api/car-rentals/${carToDelete.id}`
       );
 
       if (response.data.success) {

@@ -83,7 +83,7 @@ const AddHotel = () => {
   const fetchHotels = async () => {
     try {
       setLoading(true);
-      const response = await axios.get("http://localhost:5000/api/hotels-list");
+      const response = await axios.get("/api/hotels-list");
       if (response.data.success) {
         setHotels(response.data.data);
       }
@@ -232,7 +232,7 @@ const AddHotel = () => {
         }
 
         response = await axios.put(
-          `http://localhost:5000/api/hotels-list/${currentId}`,
+          `/api/hotels-list/${currentId}`,
           formDataToSend,
           {
             headers: {
@@ -242,7 +242,7 @@ const AddHotel = () => {
         );
       } else {
         response = await axios.post(
-          "http://localhost:5000/api/hotels-list",
+          "/api/hotels-list",
           formDataToSend,
           {
             headers: {
@@ -315,7 +315,7 @@ const AddHotel = () => {
     try {
       setLoading(true);
       const response = await axios.delete(
-        `http://localhost:5000/api/hotels-list/${hotelToDelete.id}`
+        `/api/hotels-list/${hotelToDelete.id}`
       );
 
       if (response.data.success) {

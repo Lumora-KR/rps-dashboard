@@ -146,7 +146,7 @@ const EnquireHotelDashboard = () => {
   const fetchEnquiries = async () => {
     try {
       setLoading(true);
-      let url = `http://localhost:5000/api/hotel-enquiries?page=${currentPage}&limit=${itemsPerPage}`;
+      let url = `/api/hotel-enquiries?page=${currentPage}&limit=${itemsPerPage}`;
 
       if (filterStatus !== "all") {
         url += `&status=${filterStatus}`;
@@ -245,7 +245,7 @@ const EnquireHotelDashboard = () => {
   const fetchChartData = async () => {
     try {
       const response = await axios.get(
-        "http://localhost:5000/api/hotel-enquiries/stats/chart"
+        "/api/hotel-enquiries/stats/chart"
       );
 
       if (response.data.success) {
@@ -357,7 +357,7 @@ const EnquireHotelDashboard = () => {
   const handleUpdateEnquiry = async () => {
     try {
       const response = await axios.put(
-        `http://localhost:5000/api/hotel-enquiries/${currentEnquiry.id}`,
+        `/api/hotel-enquiries/${currentEnquiry.id}`,
         formData
       );
 
@@ -392,7 +392,7 @@ const EnquireHotelDashboard = () => {
   const handleDeleteEnquiry = async () => {
     try {
       const response = await axios.delete(
-        `http://localhost:5000/api/hotel-enquiries/${currentEnquiry.id}`
+        `/api/hotel-enquiries/${currentEnquiry.id}`
       );
 
       if (response.data.success) {

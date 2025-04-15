@@ -120,7 +120,7 @@ const TourPackageDetailEnquiries = () => {
   const fetchEnquiries = async () => {
     try {
       setLoading(true);
-      let url = `http://localhost:5000/api/tour-package-detail?page=${currentPage}&limit=${itemsPerPage}`;
+      let url = `/api/tour-package-detail?page=${currentPage}&limit=${itemsPerPage}`;
 
       if (filterStatus !== "all") {
         url += `&status=${filterStatus}`;
@@ -161,7 +161,7 @@ const TourPackageDetailEnquiries = () => {
   const fetchChartData = async () => {
     try {
       const response = await axios.get(
-        "http://localhost:5000/api/tour-package-detail/stats/chart"
+        "/api/tour-package-detail/stats/chart"
       );
 
       if (response.data.success) {
@@ -273,7 +273,7 @@ const TourPackageDetailEnquiries = () => {
   const handleUpdateEnquiry = async () => {
     try {
       const response = await axios.put(
-        `http://localhost:5000/api/tour-package-detail/${currentEnquiry.id}`,
+        `/api/tour-package-detail/${currentEnquiry.id}`,
         formData
       );
 
@@ -308,7 +308,7 @@ const TourPackageDetailEnquiries = () => {
   const handleDeleteEnquiry = async () => {
     try {
       const response = await axios.delete(
-        `http://localhost:5000/api/tour-package-detail/${currentEnquiry.id}`
+        `/api/tour-package-detail/${currentEnquiry.id}`
       );
 
       if (response.data.success) {

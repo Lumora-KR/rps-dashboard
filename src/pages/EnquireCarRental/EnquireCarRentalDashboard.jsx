@@ -143,7 +143,7 @@ const EnquireCarRentalDashboard = () => {
   const fetchEnquiries = async () => {
     try {
       setLoading(true);
-      let url = `http://localhost:5000/api/car-rental-detail?page=${currentPage}&limit=${itemsPerPage}`;
+      let url = `/api/car-rental-detail?page=${currentPage}&limit=${itemsPerPage}`;
 
       if (filterStatus !== "all") {
         url += `&status=${filterStatus}`;
@@ -243,7 +243,7 @@ const EnquireCarRentalDashboard = () => {
   const fetchChartData = async () => {
     try {
       const response = await axios.get(
-        "http://localhost:5000/api/car-rental-detail/stats/chart"
+        "/api/car-rental-detail/stats/chart"
       );
 
       if (response.data.success) {
@@ -355,7 +355,7 @@ const EnquireCarRentalDashboard = () => {
   const handleUpdateEnquiry = async () => {
     try {
       const response = await axios.put(
-        `http://localhost:5000/api/car-rental-detail/${currentEnquiry.id}`,
+        `/api/car-rental-detail/${currentEnquiry.id}`,
         formData
       );
 
@@ -390,7 +390,7 @@ const EnquireCarRentalDashboard = () => {
   const handleDeleteEnquiry = async () => {
     try {
       const response = await axios.delete(
-        `http://localhost:5000/api/car-rental-detail/${currentEnquiry.id}`
+        `/api/car-rental-detail/${currentEnquiry.id}`
       );
 
       if (response.data.success) {

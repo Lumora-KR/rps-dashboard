@@ -323,10 +323,10 @@
 // export { apiService };
 import axios from "axios";
 
-const API_BASE_URL = "http://localhost:5000/api";
+const API_BASE_URL = "http://13.61.142.222/";
 
 const apiLogin = axios.create({
-  baseURL: import.meta.env.VITE_API_URL || "http://localhost:5000",
+  baseURL: import.meta.env.VITE_API_URL || "http://13.61.142.222/",
   headers: {
     "Content-Type": "application/json",
   },

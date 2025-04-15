@@ -145,11 +145,11 @@ const HomeEnquiriesDashboard = () => {
   const fetchEnquiries = async () => {
     try {
       setLoading(true);
-      let url = `http://localhost:5000/api/home-enquiries`;
+      let url = `/api/home-enquiries`;
 
       // If not showing all, filter by type
       if (activeTab !== "all") {
-        url = `http://localhost:5000/api/home-enquiries/${activeTab}`;
+        url = `/api/home-enquiries/${activeTab}`;
       }
 
       // Add pagination
@@ -193,8 +193,8 @@ const HomeEnquiriesDashboard = () => {
     try {
       const url =
         activeTab === "all"
-          ? "http://localhost:5000/api/home-enquiries/chart/all"
-          : `http://localhost:5000/api/home-enquiries/chart/${activeTab}`;
+          ? "/api/home-enquiries/chart/all"
+          : `/api/home-enquiries/chart/${activeTab}`;
 
       const response = await axios.get(url);
 
@@ -334,7 +334,7 @@ const HomeEnquiriesDashboard = () => {
   const handleUpdateEnquiry = async () => {
     try {
       const response = await axios.put(
-        `http://localhost:5000/api/home-enquiries/${currentEnquiry.id}`,
+        `/api/home-enquiries/${currentEnquiry.id}`,
         formData
       );
 
@@ -369,7 +369,7 @@ const HomeEnquiriesDashboard = () => {
   const handleDeleteEnquiry = async () => {
     try {
       const response = await axios.delete(
-        `http://localhost:5000/api/home-enquiries/${currentEnquiry.id}`
+        `/api/home-enquiries/${currentEnquiry.id}`
       );
 
       if (response.data.success) {

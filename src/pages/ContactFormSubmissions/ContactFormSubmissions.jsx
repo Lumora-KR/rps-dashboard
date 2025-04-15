@@ -107,7 +107,7 @@ const ContactFormSubmissions = () => {
   const fetchSubmissions = async () => {
     try {
       setLoading(true);
-      let url = `http://localhost:5000/api/contact?page=${currentPage}&limit=${itemsPerPage}`;
+      let url = `/api/contact?page=${currentPage}&limit=${itemsPerPage}`;
 
       if (searchTerm) {
         url += `&search=${searchTerm}`;
@@ -143,7 +143,7 @@ const ContactFormSubmissions = () => {
   const fetchChartData = async () => {
     try {
       const response = await axios.get(
-        "http://localhost:5000/api/contact/chart"
+        "/api/contact/chart"
       );
 
       if (response.data.success) {
@@ -241,7 +241,7 @@ const ContactFormSubmissions = () => {
   const handleDeleteSubmission = async () => {
     try {
       const response = await axios.delete(
-        `http://localhost:5000/api/contact/${currentSubmission.id}`
+        `/api/contact/${currentSubmission.id}`
       );
 
       if (response.data.success) {

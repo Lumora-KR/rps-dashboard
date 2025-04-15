@@ -6,7 +6,7 @@ export default defineConfig({
   server: {
     proxy: {
       "/api": {
-        target: "http://localhost:5000", // Backend URL
+        target: "http://13.61.142.222/", // Backend URL
         changeOrigin: true, // Adjust the origin to match the backend
         secure: false, // Ignore HTTPS issues in local development
         ws: true, // Enable WebSocket support if needed
