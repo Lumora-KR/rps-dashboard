@@ -18,7 +18,7 @@ import HomeEnquiriesDashboard from "./pages/HomeEnquiries/HomeEnquiriesDashboard
 import AddHotel from "./pages/AddHotel/AddHotel";
 import "./App.css";
 import AddCarRental from "./pages/AddCarRental/AddCarRental";
-
+//you're in a right path let restart again rosan
 // Protected route component
 const ProtectedRoute = ({ children }) => {
   const { isAuthenticated, loading } = useAuth();
