@@ -1,0 +1,415 @@
+/* ========================================
+   LUMINESCENCE EFFECTS - SHARED STYLES
+   Apply to all pages for consistent UI
+   ======================================== */
+
+/* Color Variables */
+:root {
+  --primary-glow: rgba(67, 97, 238, 0.6);
+  --success-glow: rgba(46, 196, 182, 0.6);
+  --warning-glow: rgba(255, 152, 0, 0.6);
+  --danger-glow: rgba(230, 57, 70, 0.6);
+  --info-glow: rgba(0, 180, 216, 0.6);
+}
+
+/* ========================================
+   KEYFRAME ANIMATIONS
+   ======================================== */
+
+@keyframes glow-pulse {
+  0%, 100% {
+    box-shadow: 0 0 15px rgba(67, 97, 238, 0.3), inset 0 0 15px rgba(67, 97, 238, 0.1);
+  }
+  50% {
+    box-shadow: 0 0 30px rgba(67, 97, 238, 0.5), inset 0 0 25px rgba(67, 97, 238, 0.15);
+  }
+}
+
+@keyframes glow-pulse-success {
+  0%, 100% {
+    box-shadow: 0 0 15px rgba(46, 196, 182, 0.3), inset 0 0 15px rgba(46, 196, 182, 0.1);
+  }
+  50% {
+    box-shadow: 0 0 30px rgba(46, 196, 182, 0.5), inset 0 0 25px rgba(46, 196, 182, 0.15);
+  }
+}
+
+@keyframes glow-pulse-warning {
+  0%, 100% {
+    box-shadow: 0 0 15px rgba(255, 152, 0, 0.3), inset 0 0 15px rgba(255, 152, 0, 0.1);
+  }
+  50% {
+    box-shadow: 0 0 30px rgba(255, 152, 0, 0.5), inset 0 0 25px rgba(255, 152, 0, 0.15);
+  }
+}
+
+@keyframes glow-pulse-danger {
+  0%, 100% {
+    box-shadow: 0 0 15px rgba(230, 57, 70, 0.3), inset 0 0 15px rgba(230, 57, 70, 0.1);
+  }
+  50% {
+    box-shadow: 0 0 30px rgba(230, 57, 70, 0.5), inset 0 0 25px rgba(230, 57, 70, 0.15);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -1000px 0;
+  }
+  100% {
+    background-position: 1000px 0;
+  }
+}
+
+@keyframes rotate-gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes slide-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ========================================
+   UTILITY CLASSES FOR LUMINESCENCE
+   ======================================== */
+
+/* Glowing Card Effect */
+.luminescent-card {
+  background: linear-gradient(135deg, #ffffff 0%, #f8fbff 100%);
+  border: 2px solid rgba(67, 97, 238, 0.1);
+  border-radius: 1rem;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06), inset 0 0 20px rgba(255, 255, 255, 0.5);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  animation: glow-pulse 4s ease-in-out infinite;
+}
+
+.luminescent-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  animation: shimmer 3s infinite;
+  pointer-events: none;
+}
+
+.luminescent-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 32px rgba(67, 97, 238, 0.2), inset 0 0 25px rgba(67, 97, 238, 0.15);
+  border-color: rgba(67, 97, 238, 0.3);
+}
+
+/* Dark Mode Glowing Card */
+.dark .luminescent-card {
+  background: linear-gradient(135deg, #1a2a4a 0%, #16213e 100%);
+  border: 2px solid rgba(67, 97, 238, 0.3);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3), inset 0 0 20px rgba(67, 97, 238, 0.1);
+}
+
+.dark .luminescent-card::before {
+  background: linear-gradient(90deg, transparent, rgba(67, 97, 238, 0.2), transparent);
+}
+
+.dark .luminescent-card:hover {
+  box-shadow: 0 12px 32px rgba(67, 97, 238, 0.3), inset 0 0 25px rgba(67, 97, 238, 0.2);
+  border-color: rgba(67, 97, 238, 0.5);
+}
+
+/* Glowing Icon */
+.luminescent-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  box-shadow: 0 0 20px rgba(67, 97, 238, 0.3), inset 0 0 15px rgba(255, 255, 255, 0.3);
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  animation: glow-pulse 3s ease-in-out infinite;
+}
+
+.luminescent-icon svg {
+  filter: drop-shadow(0 0 8px rgba(67, 97, 238, 0.4));
+}
+
+/* Glowing Icon - Success */
+.luminescent-icon.success {
+  box-shadow: 0 0 20px rgba(46, 196, 182, 0.4), inset 0 0 15px rgba(46, 196, 182, 0.1);
+  border-color: rgba(46, 196, 182, 0.3);
+  animation: glow-pulse-success 3s ease-in-out infinite;
+}
+
+.luminescent-icon.success svg {
+  filter: drop-shadow(0 0 8px rgba(46, 196, 182, 0.4));
+}
+
+/* Glowing Icon - Warning */
+.luminescent-icon.warning {
+  box-shadow: 0 0 20px rgba(255, 152, 0, 0.4), inset 0 0 15px rgba(255, 152, 0, 0.1);
+  border-color: rgba(255, 152, 0, 0.3);
+  animation: glow-pulse-warning 3s ease-in-out infinite;
+}
+
+.luminescent-icon.warning svg {
+  filter: drop-shadow(0 0 8px rgba(255, 152, 0, 0.4));
+}
+
+/* Glowing Icon - Danger */
+.luminescent-icon.danger {
+  box-shadow: 0 0 20px rgba(230, 57, 70, 0.4), inset 0 0 15px rgba(230, 57, 70, 0.1);
+  border-color: rgba(230, 57, 70, 0.3);
+  animation: glow-pulse-danger 3s ease-in-out infinite;
+}
+
+.luminescent-icon.danger svg {
+  filter: drop-shadow(0 0 8px rgba(230, 57, 70, 0.4));
+}
+
+/* Dark mode icons */
+.dark .luminescent-icon {
+  box-shadow: 0 0 25px rgba(67, 97, 238, 0.5), inset 0 0 15px rgba(67, 97, 238, 0.2);
+  border-color: rgba(67, 97, 238, 0.5);
+}
+
+.dark .luminescent-icon.success {
+  box-shadow: 0 0 25px rgba(46, 196, 182, 0.5), inset 0 0 15px rgba(46, 196, 182, 0.2);
+  border-color: rgba(46, 196, 182, 0.5);
+}
+
+.dark .luminescent-icon.warning {
+  box-shadow: 0 0 25px rgba(255, 152, 0, 0.5), inset 0 0 15px rgba(255, 152, 0, 0.2);
+  border-color: rgba(255, 152, 0, 0.5);
+}
+
+.dark .luminescent-icon.danger {
+  box-shadow: 0 0 25px rgba(230, 57, 70, 0.5), inset 0 0 15px rgba(230, 57, 70, 0.2);
+  border-color: rgba(230, 57, 70, 0.5);
+}
+
+/* Table Row Hover Effect */
+.luminescent-table tbody tr {
+  transition: all 0.3s ease;
+}
+
+.luminescent-table tbody tr:hover {
+  background-color: rgba(67, 97, 238, 0.08);
+  box-shadow: inset 0 0 15px rgba(67, 97, 238, 0.1);
+  transform: translateX(4px);
+}
+
+.dark .luminescent-table tbody tr:hover {
+  background-color: rgba(67, 97, 238, 0.15);
+}
+
+/* Button with Glow Effect */
+.button-glow {
+  padding: 0.65rem 1.25rem;
+  border-radius: 0.75rem;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+.button-glow::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  transform: translate(-50%, -50%);
+  transition: width 0.6s, height 0.6s;
+}
+
+.button-glow:hover::before {
+  width: 300px;
+  height: 300px;
+}
+
+.button-glow:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.button-glow:active {
+  transform: translateY(0px);
+}
+
+/* Gradient Text */
+.gradient-text {
+  background: linear-gradient(135deg, #4361ee 0%, #2ec4b6 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.dark .gradient-text {
+  background: linear-gradient(135deg, #6b8cff 0%, #4ef5d6 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Header with Luminescence */
+.luminescent-header {
+  background: linear-gradient(135deg, rgba(67, 97, 238, 0.1) 0%, rgba(46, 196, 182, 0.1) 100%);
+  padding: 1.5rem;
+  border-radius: 1rem;
+  box-shadow: 0 0 20px rgba(67, 97, 238, 0.15);
+  border: 1px solid rgba(67, 97, 238, 0.2);
+  margin-bottom: 2rem;
+}
+
+.dark .luminescent-header {
+  background: linear-gradient(135deg, rgba(67, 97, 238, 0.15) 0%, rgba(46, 196, 182, 0.1) 100%);
+  box-shadow: 0 0 20px rgba(67, 97, 238, 0.2);
+  border: 1px solid rgba(67, 97, 238, 0.3);
+}
+
+/* Loading Animation */
+.luminescent-loading {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  border: 4px solid rgba(67, 97, 238, 0.1);
+  border-top: 4px solid #4361ee;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  box-shadow: 0 0 20px rgba(67, 97, 238, 0.3);
+}
+
+.dark .luminescent-loading {
+  border: 4px solid rgba(67, 97, 238, 0.2);
+  border-top: 4px solid #6b8cff;
+}
+
+/* Badge with Glow */
+.badge-glow {
+  padding: 0.35rem 0.85rem;
+  border-radius: 9999px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  box-shadow: 0 0 15px rgba(67, 97, 238, 0.3);
+  border: 1px solid rgba(67, 97, 238, 0.3);
+  transition: all 0.3s ease;
+}
+
+.badge-glow:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 25px rgba(67, 97, 238, 0.5);
+}
+
+.badge-glow.success {
+  box-shadow: 0 0 15px rgba(46, 196, 182, 0.3);
+  border-color: rgba(46, 196, 182, 0.3);
+}
+
+.badge-glow.success:hover {
+  box-shadow: 0 0 25px rgba(46, 196, 182, 0.5);
+}
+
+.badge-glow.warning {
+  box-shadow: 0 0 15px rgba(255, 152, 0, 0.3);
+  border-color: rgba(255, 152, 0, 0.3);
+}
+
+.badge-glow.warning:hover {
+  box-shadow: 0 0 25px rgba(255, 152, 0, 0.5);
+}
+
+.badge-glow.danger {
+  box-shadow: 0 0 15px rgba(230, 57, 70, 0.3);
+  border-color: rgba(230, 57, 70, 0.3);
+}
+
+.badge-glow.danger:hover {
+  box-shadow: 0 0 25px rgba(230, 57, 70, 0.5);
+}
+
+/* Scrollbar Styling */
+.luminescent-scrollbar::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.luminescent-scrollbar::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.05);
+  border-radius: 10px;
+}
+
+.luminescent-scrollbar::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, #4361ee 0%, #2ec4b6 100%);
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(67, 97, 238, 0.3);
+}
+
+.luminescent-scrollbar::-webkit-scrollbar-thumb:hover {
+  box-shadow: 0 0 15px rgba(67, 97, 238, 0.5);
+}
+
+.dark .luminescent-scrollbar::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+/* Animation Utility Classes */
+.animate-slide-in {
+  animation: slide-in-up 0.6s ease-out;
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.animate-shimmer {
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  background-size: 1000px 100%;
+  animation: shimmer 2s infinite;
+}
+
+.animate-glow {
+  animation: glow-pulse 3s ease-in-out infinite;
+}

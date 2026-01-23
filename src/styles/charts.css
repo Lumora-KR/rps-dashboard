@@ -1,0 +1,217 @@
+/* ========================================
+   ADVANCED CHART AND TOOLTIP STYLING
+   ======================================== */
+
+/* Recharts Tooltip Custom Styling */
+.recharts-tooltip-wrapper {
+  outline: none;
+}
+
+.recharts-tooltip {
+  background: transparent !important;
+  box-shadow: none !important;
+  border: none !important;
+  outline: none !important;
+}
+
+.recharts-default-tooltip {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  outline: none !important;
+}
+
+/* Legend Styling */
+.recharts-legend {
+  padding-top: 1.5rem !important;
+}
+
+.recharts-legend-wrapper {
+  display: flex !important;
+  justify-content: center !important;
+  gap: 2rem !important;
+  flex-wrap: wrap !important;
+  margin-top: 1.5rem !important;
+}
+
+.recharts-legend-item {
+  font-weight: 700 !important;
+  letter-spacing: 0.3px !important;
+  margin: 0 1rem !important;
+}
+
+.recharts-legend-item-text {
+  font-size: 0.95rem !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.3px !important;
+  color: inherit !important;
+}
+
+/* Axis Styling */
+.recharts-cartesian-axis-tick-value {
+  font-weight: 600 !important;
+  font-size: 0.9rem !important;
+  letter-spacing: 0.2px !important;
+}
+
+.recharts-text {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif !important;
+}
+
+/* Line Chart Enhancements */
+.recharts-line {
+  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.15)) !important;
+}
+
+.recharts-line-dot {
+  filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.2)) !important;
+}
+
+.recharts-active-dot {
+  filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.25)) !important;
+}
+
+/* Pie Chart Enhancements */
+.recharts-pie-sector {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.15)) !important;
+}
+
+.recharts-pie-sector:hover {
+  filter: drop-shadow(0 4px 16px rgba(0, 0, 0, 0.25)) !important;
+  transform: scale(1.02) !important;
+  transform-origin: center !important;
+}
+
+/* Grid Styling */
+.recharts-cartesian-grid-horizontal line,
+.recharts-cartesian-grid-vertical line {
+  stroke-dasharray: 5 5 !important;
+  opacity: 0.6 !important;
+}
+
+/* Tooltip Content Styling */
+.recharts-tooltip-wrapper div {
+  outline: none !important;
+}
+
+/* X Axis Label */
+.recharts-xAxis .recharts-cartesian-axis-tick {
+  font-weight: 600 !important;
+}
+
+/* Y Axis Label */
+.recharts-yAxis .recharts-cartesian-axis-tick {
+  font-weight: 600 !important;
+}
+
+/* Cursor Line */
+.recharts-tooltip-cursor {
+  stroke-dasharray: 3 3 !important;
+  opacity: 0.6 !important;
+}
+
+/* Bar Chart Enhancements */
+.recharts-bar-rectangles rect {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.15)) !important;
+}
+
+.recharts-bar-rectangles rect:hover {
+  filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.25)) !important;
+}
+
+/* Area Chart Enhancements */
+.recharts-area {
+  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.1)) !important;
+}
+
+/* Radar Chart Enhancements */
+.recharts-radar-polygon {
+  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.15)) !important;
+}
+
+/* Scatter Chart Enhancements */
+.recharts-scatter-symbol circle {
+  transition: all 0.3s ease !important;
+  filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.15)) !important;
+}
+
+.recharts-scatter-symbol circle:hover {
+  filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.25)) !important;
+}
+
+/* Chart Container Background */
+.recharts-surface {
+  background: transparent !important;
+}
+
+/* Enhanced Focus Styles */
+.recharts-pie-name-text,
+.recharts-bar-name,
+.recharts-line-name {
+  font-weight: 700 !important;
+  font-size: 0.95rem !important;
+  letter-spacing: 0.3px !important;
+}
+
+/* Accessibility & Interaction */
+.recharts-wrapper {
+  position: relative !important;
+}
+
+.recharts-responsive-container {
+  background: transparent !important;
+}
+
+/* Dark Mode Adjustments */
+body.dark-mode {
+  --chart-text-color: #f8f9fa;
+  --chart-grid-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Chart Animation */
+@keyframes chartPulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.8;
+  }
+}
+
+.recharts-pie-sector.active {
+  animation: chartPulse 0.6s ease-in-out;
+}
+
+/* Legend Item Hover Effect */
+.recharts-legend-item {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  cursor: pointer !important;
+}
+
+.recharts-legend-item:hover {
+  transform: translateY(-2px) !important;
+}
+
+/* Smooth Transitions */
+svg {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+/* Chart Container Animations */
+@keyframes chartFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.recharts-wrapper {
+  animation: chartFadeIn 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
